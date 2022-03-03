@@ -17,12 +17,12 @@ recursive subroutine quicksort(arr, i, j)
       jj = j
       p = j
 
-      if (i >= j) then
+      if (i == j) then
               continue
               ! do nothing
 
       else
-              do while (ii<=jj)
+              do while (ii<jj)
                 bi = (arr(ii) >= arr(p))
                 bj = (arr(jj) < arr(p))
 
@@ -32,18 +32,15 @@ recursive subroutine quicksort(arr, i, j)
                         ii = ii + 1
                         jj = jj - 1
 
-                else if ((bi.eqv..false.).and.(bj.eqv..true.)) then
-
+                else if ((bi .neqv. bj) .or. bj) then
+                        
                         ii = ii + 1
 
-                else if ((bi.eqv..true.).and.(bj.eqv..false.)) then
+                else if ((bi .neqv. bj) .or. bi) then
                         
                         jj = jj - 1
                 
-                else if ((bi.eqv..false.).and.(bj.eqv..false.)) then
                 
-                        ii = ii + 1
-                        jj = jj - 1
                 end if
 
              end do

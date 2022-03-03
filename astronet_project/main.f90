@@ -3,9 +3,9 @@ program sorting_test_main
         implicit none
 
         integer l
-        real :: arr(10)
+        real :: arr(3)
 
-        l = 10
+        l = 3
 
         call random_number(arr)
 
