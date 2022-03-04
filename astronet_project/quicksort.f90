@@ -48,9 +48,11 @@ recursive subroutine quicksort(arr, i, j)
 
              end do
 
+             ! move pivot to middle
              call swap(arr(ii), arr(p))
              p = ii
 
+             ! recursive process for left and right of the pivot
              call quicksort(arr, i, p-1)
              call quicksort(arr, p+1, j)
 
